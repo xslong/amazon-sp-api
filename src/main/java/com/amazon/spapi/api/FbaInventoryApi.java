@@ -64,7 +64,7 @@ public class FbaInventoryApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getInventorySummariesCall(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getInventorySummariesCall(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -104,10 +104,10 @@ public class FbaInventoryApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -120,7 +120,7 @@ public class FbaInventoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getInventorySummariesValidateBeforeCall(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getInventorySummariesValidateBeforeCall(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'granularityType' is set
         if (granularityType == null) {
@@ -138,7 +138,7 @@ public class FbaInventoryApi {
         }
         
 
-        com.squareup.okhttp.Call call = getInventorySummariesCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, progressListener, progressRequestListener);
+        okhttp3.Call call = getInventorySummariesCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, progressListener, progressRequestListener);
         return call;
 
     }
@@ -175,7 +175,7 @@ public class FbaInventoryApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetInventorySummariesResponse> getInventorySummariesWithHttpInfo(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken) throws ApiException {
-        com.squareup.okhttp.Call call = getInventorySummariesValidateBeforeCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, null, null);
+        okhttp3.Call call = getInventorySummariesValidateBeforeCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, null, null);
         Type localVarReturnType = new TypeToken<GetInventorySummariesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -194,7 +194,7 @@ public class FbaInventoryApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getInventorySummariesAsync(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ApiCallback<GetInventorySummariesResponse> callback) throws ApiException {
+    public okhttp3.Call getInventorySummariesAsync(String granularityType, String granularityId, List<String> marketplaceIds, Boolean details, OffsetDateTime startDateTime, List<String> sellerSkus, String nextToken, final ApiCallback<GetInventorySummariesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -215,7 +215,7 @@ public class FbaInventoryApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getInventorySummariesValidateBeforeCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, progressListener, progressRequestListener);
+        okhttp3.Call call = getInventorySummariesValidateBeforeCall(granularityType, granularityId, marketplaceIds, details, startDateTime, sellerSkus, nextToken, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetInventorySummariesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -3,7 +3,7 @@ package com.amazon.spapi.SellingPartnerAPIAA;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.squareup.okhttp.*;
+import okhttp3.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

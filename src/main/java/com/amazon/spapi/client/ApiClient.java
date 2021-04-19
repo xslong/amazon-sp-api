@@ -13,10 +13,15 @@
 
 package com.amazon.spapi.client;
 
-import com.squareup.okhttp.*;
-import com.squareup.okhttp.internal.http.HttpMethod;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
+import com.amazon.spapi.SellingPartnerAPIAA.AWSSigV4Signer;
+import com.amazon.spapi.SellingPartnerAPIAA.LWAAuthorizationSigner;
+import com.amazon.spapi.auth.ApiKeyAuth;
+import com.amazon.spapi.auth.Authentication;
+import com.amazon.spapi.auth.HttpBasicAuth;
+import com.amazon.spapi.auth.OAuth;
+import okhttp3.*;
+import okhttp3.internal.http.HttpMethod;
+import okhttp3.logging.HttpLoggingInterceptor;
 import okio.BufferedSink;
 import okio.Okio;
 import org.threeten.bp.LocalDate;
@@ -44,14 +49,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.amazon.spapi.auth.Authentication;
-import com.amazon.spapi.auth.HttpBasicAuth;
-import com.amazon.spapi.auth.ApiKeyAuth;
-import com.amazon.spapi.auth.OAuth;
-
-import com.amazon.spapi.SellingPartnerAPIAA.AWSSigV4Signer;
-import com.amazon.spapi.SellingPartnerAPIAA.LWAAuthorizationSigner;
 
 public class ApiClient {
 
@@ -176,11 +173,11 @@ public class ApiClient {
      * @param verifyingSsl True to verify TLS/SSL connection
      * @return ApiClient
      */
-    public ApiClient setVerifyingSsl(boolean verifyingSsl) {
-        this.verifyingSsl = verifyingSsl;
-        applySslSettings();
-        return this;
-    }
+//    public ApiClient setVerifyingSsl(boolean verifyingSsl) {
+//        this.verifyingSsl = verifyingSsl;
+//        applySslSettings();
+//        return this;
+//    }
 
     /**
      * Get SSL CA cert.
@@ -198,11 +195,11 @@ public class ApiClient {
      * @param sslCaCert input stream for SSL CA cert
      * @return ApiClient
      */
-    public ApiClient setSslCaCert(InputStream sslCaCert) {
-        this.sslCaCert = sslCaCert;
-        applySslSettings();
-        return this;
-    }
+//    public ApiClient setSslCaCert(InputStream sslCaCert) {
+//        this.sslCaCert = sslCaCert;
+//        applySslSettings();
+//        return this;
+//    }
 
     public KeyManager[] getKeyManagers() {
         return keyManagers;
@@ -215,11 +212,11 @@ public class ApiClient {
      * @param managers The KeyManagers to use
      * @return ApiClient
      */
-    public ApiClient setKeyManagers(KeyManager[] managers) {
-        this.keyManagers = managers;
-        applySslSettings();
-        return this;
-    }
+//    public ApiClient setKeyManagers(KeyManager[] managers) {
+//        this.keyManagers = managers;
+//        applySslSettings();
+//        return this;
+//    }
 
     public DateFormat getDateFormat() {
         return dateFormat;
@@ -386,7 +383,7 @@ public class ApiClient {
         if (debugging != this.debugging) {
             if (debugging) {
                 loggingInterceptor = new HttpLoggingInterceptor();
-                loggingInterceptor.setLevel(Level.BODY);
+                loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
                 httpClient.interceptors().add(loggingInterceptor);
             } else {
                 httpClient.interceptors().remove(loggingInterceptor);
@@ -426,7 +423,7 @@ public class ApiClient {
      * @return Timeout in milliseconds
      */
     public int getConnectTimeout() {
-        return httpClient.getConnectTimeout();
+        return httpClient.connectTimeoutMillis();
     }
 
     /**
@@ -437,10 +434,10 @@ public class ApiClient {
      * @param connectionTimeout connection timeout in milliseconds
      * @return Api client
      */
-    public ApiClient setConnectTimeout(int connectionTimeout) {
-        httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
-        return this;
-    }
+//    public ApiClient setConnectTimeout(int connectionTimeout) {
+//        httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
+//        return this;
+//    }
 
     /**
      * Get read timeout (in milliseconds).
@@ -448,7 +445,7 @@ public class ApiClient {
      * @return Timeout in milliseconds
      */
     public int getReadTimeout() {
-        return httpClient.getReadTimeout();
+        return httpClient.readTimeoutMillis();
     }
 
     /**
@@ -459,19 +456,19 @@ public class ApiClient {
      * @param readTimeout read timeout in milliseconds
      * @return Api client
      */
-    public ApiClient setReadTimeout(int readTimeout) {
-        httpClient.setReadTimeout(readTimeout, TimeUnit.MILLISECONDS);
-        return this;
-    }
+//    public ApiClient setReadTimeout(int readTimeout) {
+//        httpClient.setReadTimeout(readTimeout, TimeUnit.MILLISECONDS);
+//        return this;
+//    }
 
     /**
      * Get write timeout (in milliseconds).
      *
      * @return Timeout in milliseconds
      */
-    public int getWriteTimeout() {
-        return httpClient.getWriteTimeout();
-    }
+//    public int getWriteTimeout() {
+//        return httpClient.getWriteTimeout();
+//    }
 
     /**
      * Sets the write timeout (in milliseconds).
@@ -481,10 +478,10 @@ public class ApiClient {
      * @param writeTimeout connection timeout in milliseconds
      * @return Api client
      */
-    public ApiClient setWriteTimeout(int writeTimeout) {
-        httpClient.setWriteTimeout(writeTimeout, TimeUnit.MILLISECONDS);
-        return this;
-    }
+//    public ApiClient setWriteTimeout(int writeTimeout) {
+//        httpClient.setWriteTimeout(writeTimeout, TimeUnit.MILLISECONDS);
+//        return this;
+//    }
 
     /**
      * Sets the LWAAuthorizationSigner
@@ -896,13 +893,14 @@ public class ApiClient {
     @SuppressWarnings("unchecked")
     public <T> void executeAsync(Call call, final Type returnType, final ApiCallback<T> callback) {
         call.enqueue(new Callback() {
+
             @Override
-            public void onFailure(Request request, IOException e) {
+            public void onFailure(Call call, IOException e) {
                 callback.onFailure(new ApiException(e), 0, null);
             }
 
             @Override
-            public void onResponse(Response response) throws IOException {
+            public void onResponse(Call call, Response response) throws IOException {
                 T result;
                 try {
                     result = (T) handleResponse(response, returnType);
@@ -931,11 +929,7 @@ public class ApiClient {
                 // returning null if the returnType is not defined,
                 // or the status code is 204 (No Content)
                 if (response.body() != null) {
-                    try {
-                        response.body().close();
-                    } catch (IOException e) {
-                        throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
-                    }
+                    response.body().close();
                 }
                 return null;
             } else {
@@ -1125,7 +1119,7 @@ public class ApiClient {
      * @return RequestBody
      */
     public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
-        FormEncodingBuilder formBuilder  = new FormEncodingBuilder();
+        FormBody.Builder formBuilder = new FormBody.Builder();
         for (Entry<String, Object> param : formParams.entrySet()) {
             formBuilder.add(param.getKey(), parameterToString(param.getValue()));
         }
@@ -1140,7 +1134,7 @@ public class ApiClient {
      * @return RequestBody
      */
     public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
-        MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);
+        MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
         for (Entry<String, Object> param : formParams.entrySet()) {
             if (param.getValue() instanceof File) {
                 File file = (File) param.getValue();
@@ -1174,6 +1168,7 @@ public class ApiClient {
      * Apply SSL related settings to httpClient according to the current values of
      * verifyingSsl and sslCaCert.
      */
+    /*
     private void applySslSettings() {
         try {
             TrustManager[] trustManagers = null;
@@ -1214,7 +1209,7 @@ public class ApiClient {
             if (keyManagers != null || trustManagers != null) {
                 SSLContext sslContext = SSLContext.getInstance("TLS");
                 sslContext.init(keyManagers, trustManagers, new SecureRandom());
-                httpClient.setSslSocketFactory(sslContext.getSocketFactory());
+                httpClient.setsslSocketFactory(sslContext.getSocketFactory());
             } else {
                 httpClient.setSslSocketFactory(null);
             }
@@ -1223,6 +1218,7 @@ public class ApiClient {
             throw new RuntimeException(e);
         }
     }
+     */
 
     private KeyStore newEmptyKeyStore(char[] password) throws GeneralSecurityException {
         try {

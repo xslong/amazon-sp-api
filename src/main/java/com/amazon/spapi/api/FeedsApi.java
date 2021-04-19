@@ -65,7 +65,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cancelFeedCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call cancelFeedCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -92,10 +92,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -108,7 +108,7 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cancelFeedValidateBeforeCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call cancelFeedValidateBeforeCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'feedId' is set
         if (feedId == null) {
@@ -116,7 +116,7 @@ public class FeedsApi {
         }
         
 
-        com.squareup.okhttp.Call call = cancelFeedCall(feedId, progressListener, progressRequestListener);
+        okhttp3.Call call = cancelFeedCall(feedId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -141,7 +141,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CancelFeedResponse> cancelFeedWithHttpInfo(String feedId) throws ApiException {
-        com.squareup.okhttp.Call call = cancelFeedValidateBeforeCall(feedId, null, null);
+        okhttp3.Call call = cancelFeedValidateBeforeCall(feedId, null, null);
         Type localVarReturnType = new TypeToken<CancelFeedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -154,7 +154,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cancelFeedAsync(String feedId, final ApiCallback<CancelFeedResponse> callback) throws ApiException {
+    public okhttp3.Call cancelFeedAsync(String feedId, final ApiCallback<CancelFeedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,7 +175,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = cancelFeedValidateBeforeCall(feedId, progressListener, progressRequestListener);
+        okhttp3.Call call = cancelFeedValidateBeforeCall(feedId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CancelFeedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -188,7 +188,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFeedCall(CreateFeedSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createFeedCall(CreateFeedSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -214,10 +214,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -230,7 +230,7 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFeedValidateBeforeCall(CreateFeedSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createFeedValidateBeforeCall(CreateFeedSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -238,7 +238,7 @@ public class FeedsApi {
         }
         
 
-        com.squareup.okhttp.Call call = createFeedCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createFeedCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -263,7 +263,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateFeedResponse> createFeedWithHttpInfo(CreateFeedSpecification body) throws ApiException {
-        com.squareup.okhttp.Call call = createFeedValidateBeforeCall(body, null, null);
+        okhttp3.Call call = createFeedValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateFeedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -276,7 +276,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createFeedAsync(CreateFeedSpecification body, final ApiCallback<CreateFeedResponse> callback) throws ApiException {
+    public okhttp3.Call createFeedAsync(CreateFeedSpecification body, final ApiCallback<CreateFeedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -297,7 +297,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createFeedValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createFeedValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateFeedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -310,7 +310,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFeedDocumentCall(CreateFeedDocumentSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createFeedDocumentCall(CreateFeedDocumentSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -336,10 +336,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -352,7 +352,7 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFeedDocumentValidateBeforeCall(CreateFeedDocumentSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createFeedDocumentValidateBeforeCall(CreateFeedDocumentSpecification body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -360,7 +360,7 @@ public class FeedsApi {
         }
         
 
-        com.squareup.okhttp.Call call = createFeedDocumentCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createFeedDocumentCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -385,7 +385,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateFeedDocumentResponse> createFeedDocumentWithHttpInfo(CreateFeedDocumentSpecification body) throws ApiException {
-        com.squareup.okhttp.Call call = createFeedDocumentValidateBeforeCall(body, null, null);
+        okhttp3.Call call = createFeedDocumentValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateFeedDocumentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -398,7 +398,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createFeedDocumentAsync(CreateFeedDocumentSpecification body, final ApiCallback<CreateFeedDocumentResponse> callback) throws ApiException {
+    public okhttp3.Call createFeedDocumentAsync(CreateFeedDocumentSpecification body, final ApiCallback<CreateFeedDocumentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -419,7 +419,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createFeedDocumentValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createFeedDocumentValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateFeedDocumentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -432,7 +432,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFeedCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFeedCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -459,10 +459,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -475,7 +475,7 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeedValidateBeforeCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFeedValidateBeforeCall(String feedId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'feedId' is set
         if (feedId == null) {
@@ -483,7 +483,7 @@ public class FeedsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getFeedCall(feedId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedCall(feedId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -508,7 +508,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetFeedResponse> getFeedWithHttpInfo(String feedId) throws ApiException {
-        com.squareup.okhttp.Call call = getFeedValidateBeforeCall(feedId, null, null);
+        okhttp3.Call call = getFeedValidateBeforeCall(feedId, null, null);
         Type localVarReturnType = new TypeToken<GetFeedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -521,7 +521,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFeedAsync(String feedId, final ApiCallback<GetFeedResponse> callback) throws ApiException {
+    public okhttp3.Call getFeedAsync(String feedId, final ApiCallback<GetFeedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -542,7 +542,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFeedValidateBeforeCall(feedId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedValidateBeforeCall(feedId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetFeedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -555,7 +555,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFeedDocumentCall(String feedDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFeedDocumentCall(String feedDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -582,10 +582,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -598,7 +598,7 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeedDocumentValidateBeforeCall(String feedDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFeedDocumentValidateBeforeCall(String feedDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'feedDocumentId' is set
         if (feedDocumentId == null) {
@@ -606,7 +606,7 @@ public class FeedsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getFeedDocumentCall(feedDocumentId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedDocumentCall(feedDocumentId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -631,7 +631,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetFeedDocumentResponse> getFeedDocumentWithHttpInfo(String feedDocumentId) throws ApiException {
-        com.squareup.okhttp.Call call = getFeedDocumentValidateBeforeCall(feedDocumentId, null, null);
+        okhttp3.Call call = getFeedDocumentValidateBeforeCall(feedDocumentId, null, null);
         Type localVarReturnType = new TypeToken<GetFeedDocumentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -644,7 +644,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFeedDocumentAsync(String feedDocumentId, final ApiCallback<GetFeedDocumentResponse> callback) throws ApiException {
+    public okhttp3.Call getFeedDocumentAsync(String feedDocumentId, final ApiCallback<GetFeedDocumentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -665,7 +665,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFeedDocumentValidateBeforeCall(feedDocumentId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedDocumentValidateBeforeCall(feedDocumentId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetFeedDocumentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -684,7 +684,7 @@ public class FeedsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFeedsCall(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFeedsCall(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -724,10 +724,10 @@ public class FeedsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -740,10 +740,10 @@ public class FeedsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFeedsValidateBeforeCall(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFeedsValidateBeforeCall(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getFeedsCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedsCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, progressListener, progressRequestListener);
         return call;
 
     }
@@ -780,7 +780,7 @@ public class FeedsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetFeedsResponse> getFeedsWithHttpInfo(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken) throws ApiException {
-        com.squareup.okhttp.Call call = getFeedsValidateBeforeCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, null, null);
+        okhttp3.Call call = getFeedsValidateBeforeCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, null, null);
         Type localVarReturnType = new TypeToken<GetFeedsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -799,7 +799,7 @@ public class FeedsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFeedsAsync(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ApiCallback<GetFeedsResponse> callback) throws ApiException {
+    public okhttp3.Call getFeedsAsync(List<String> feedTypes, List<String> marketplaceIds, Integer pageSize, List<String> processingStatuses, OffsetDateTime createdSince, OffsetDateTime createdUntil, String nextToken, final ApiCallback<GetFeedsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -820,7 +820,7 @@ public class FeedsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFeedsValidateBeforeCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, progressListener, progressRequestListener);
+        okhttp3.Call call = getFeedsValidateBeforeCall(feedTypes, marketplaceIds, pageSize, processingStatuses, createdSince, createdUntil, nextToken, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetFeedsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -2,7 +2,7 @@ package com.amazon.spapi.documents.impl;
 
 import com.amazon.spapi.documents.HttpTransferClient;
 import com.amazon.spapi.documents.exception.HttpResponseException;
-import com.squareup.okhttp.*;
+import okhttp3.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 

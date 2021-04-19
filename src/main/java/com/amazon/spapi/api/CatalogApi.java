@@ -60,7 +60,7 @@ public class CatalogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getCatalogItemCall(String marketplaceId, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCatalogItemCall(String marketplaceId, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -89,10 +89,10 @@ public class CatalogApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -105,7 +105,7 @@ public class CatalogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCatalogItemValidateBeforeCall(String marketplaceId, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCatalogItemValidateBeforeCall(String marketplaceId, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -118,7 +118,7 @@ public class CatalogApi {
         }
         
 
-        com.squareup.okhttp.Call call = getCatalogItemCall(marketplaceId, asin, progressListener, progressRequestListener);
+        okhttp3.Call call = getCatalogItemCall(marketplaceId, asin, progressListener, progressRequestListener);
         return call;
 
     }
@@ -145,7 +145,7 @@ public class CatalogApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetCatalogItemResponse> getCatalogItemWithHttpInfo(String marketplaceId, String asin) throws ApiException {
-        com.squareup.okhttp.Call call = getCatalogItemValidateBeforeCall(marketplaceId, asin, null, null);
+        okhttp3.Call call = getCatalogItemValidateBeforeCall(marketplaceId, asin, null, null);
         Type localVarReturnType = new TypeToken<GetCatalogItemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -159,7 +159,7 @@ public class CatalogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCatalogItemAsync(String marketplaceId, String asin, final ApiCallback<GetCatalogItemResponse> callback) throws ApiException {
+    public okhttp3.Call getCatalogItemAsync(String marketplaceId, String asin, final ApiCallback<GetCatalogItemResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -180,7 +180,7 @@ public class CatalogApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCatalogItemValidateBeforeCall(marketplaceId, asin, progressListener, progressRequestListener);
+        okhttp3.Call call = getCatalogItemValidateBeforeCall(marketplaceId, asin, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetCatalogItemResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -195,7 +195,7 @@ public class CatalogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listCatalogCategoriesCall(String marketplaceId, String ASIN, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call listCatalogCategoriesCall(String marketplaceId, String ASIN, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -227,10 +227,10 @@ public class CatalogApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -243,7 +243,7 @@ public class CatalogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listCatalogCategoriesValidateBeforeCall(String marketplaceId, String ASIN, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call listCatalogCategoriesValidateBeforeCall(String marketplaceId, String ASIN, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -251,7 +251,7 @@ public class CatalogApi {
         }
         
 
-        com.squareup.okhttp.Call call = listCatalogCategoriesCall(marketplaceId, ASIN, sellerSKU, progressListener, progressRequestListener);
+        okhttp3.Call call = listCatalogCategoriesCall(marketplaceId, ASIN, sellerSKU, progressListener, progressRequestListener);
         return call;
 
     }
@@ -280,7 +280,7 @@ public class CatalogApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ListCatalogCategoriesResponse> listCatalogCategoriesWithHttpInfo(String marketplaceId, String ASIN, String sellerSKU) throws ApiException {
-        com.squareup.okhttp.Call call = listCatalogCategoriesValidateBeforeCall(marketplaceId, ASIN, sellerSKU, null, null);
+        okhttp3.Call call = listCatalogCategoriesValidateBeforeCall(marketplaceId, ASIN, sellerSKU, null, null);
         Type localVarReturnType = new TypeToken<ListCatalogCategoriesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -295,7 +295,7 @@ public class CatalogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCatalogCategoriesAsync(String marketplaceId, String ASIN, String sellerSKU, final ApiCallback<ListCatalogCategoriesResponse> callback) throws ApiException {
+    public okhttp3.Call listCatalogCategoriesAsync(String marketplaceId, String ASIN, String sellerSKU, final ApiCallback<ListCatalogCategoriesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -316,7 +316,7 @@ public class CatalogApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listCatalogCategoriesValidateBeforeCall(marketplaceId, ASIN, sellerSKU, progressListener, progressRequestListener);
+        okhttp3.Call call = listCatalogCategoriesValidateBeforeCall(marketplaceId, ASIN, sellerSKU, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ListCatalogCategoriesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -336,7 +336,7 @@ public class CatalogApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listCatalogItemsCall(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call listCatalogItemsCall(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -378,10 +378,10 @@ public class CatalogApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -394,7 +394,7 @@ public class CatalogApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listCatalogItemsValidateBeforeCall(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call listCatalogItemsValidateBeforeCall(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -402,7 +402,7 @@ public class CatalogApi {
         }
         
 
-        com.squareup.okhttp.Call call = listCatalogItemsCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, progressListener, progressRequestListener);
+        okhttp3.Call call = listCatalogItemsCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, progressListener, progressRequestListener);
         return call;
 
     }
@@ -441,7 +441,7 @@ public class CatalogApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ListCatalogItemsResponse> listCatalogItemsWithHttpInfo(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN) throws ApiException {
-        com.squareup.okhttp.Call call = listCatalogItemsValidateBeforeCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, null, null);
+        okhttp3.Call call = listCatalogItemsValidateBeforeCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, null, null);
         Type localVarReturnType = new TypeToken<ListCatalogItemsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -461,7 +461,7 @@ public class CatalogApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCatalogItemsAsync(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ApiCallback<ListCatalogItemsResponse> callback) throws ApiException {
+    public okhttp3.Call listCatalogItemsAsync(String marketplaceId, String query, String queryContextId, String sellerSKU, String UPC, String EAN, String ISBN, String JAN, final ApiCallback<ListCatalogItemsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -482,7 +482,7 @@ public class CatalogApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listCatalogItemsValidateBeforeCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, progressListener, progressRequestListener);
+        okhttp3.Call call = listCatalogItemsValidateBeforeCall(marketplaceId, query, queryContextId, sellerSKU, UPC, EAN, ISBN, JAN, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ListCatalogItemsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

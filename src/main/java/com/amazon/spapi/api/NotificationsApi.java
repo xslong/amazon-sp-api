@@ -66,7 +66,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createDestinationCall(CreateDestinationRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createDestinationCall(CreateDestinationRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -92,10 +92,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -108,7 +108,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createDestinationValidateBeforeCall(CreateDestinationRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createDestinationValidateBeforeCall(CreateDestinationRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -116,7 +116,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = createDestinationCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createDestinationCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -141,7 +141,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateDestinationResponse> createDestinationWithHttpInfo(CreateDestinationRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createDestinationValidateBeforeCall(body, null, null);
+        okhttp3.Call call = createDestinationValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<CreateDestinationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -154,7 +154,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createDestinationAsync(CreateDestinationRequest body, final ApiCallback<CreateDestinationResponse> callback) throws ApiException {
+    public okhttp3.Call createDestinationAsync(CreateDestinationRequest body, final ApiCallback<CreateDestinationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,7 +175,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createDestinationValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = createDestinationValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateDestinationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -189,7 +189,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(CreateSubscriptionRequest body, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest body, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -216,10 +216,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -232,7 +232,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(CreateSubscriptionRequest body, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createSubscriptionValidateBeforeCall(CreateSubscriptionRequest body, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -245,7 +245,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = createSubscriptionCall(body, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionCall(body, notificationType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -272,7 +272,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest body, String notificationType) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(body, notificationType, null, null);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(body, notificationType, null, null);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -286,7 +286,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(CreateSubscriptionRequest body, String notificationType, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest body, String notificationType, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -307,7 +307,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(body, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(body, notificationType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -320,7 +320,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteDestinationCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteDestinationCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -347,10 +347,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -363,7 +363,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteDestinationValidateBeforeCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteDestinationValidateBeforeCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'destinationId' is set
         if (destinationId == null) {
@@ -371,7 +371,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteDestinationCall(destinationId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteDestinationCall(destinationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -396,7 +396,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<DeleteDestinationResponse> deleteDestinationWithHttpInfo(String destinationId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteDestinationValidateBeforeCall(destinationId, null, null);
+        okhttp3.Call call = deleteDestinationValidateBeforeCall(destinationId, null, null);
         Type localVarReturnType = new TypeToken<DeleteDestinationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -409,7 +409,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteDestinationAsync(String destinationId, final ApiCallback<DeleteDestinationResponse> callback) throws ApiException {
+    public okhttp3.Call deleteDestinationAsync(String destinationId, final ApiCallback<DeleteDestinationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -430,7 +430,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteDestinationValidateBeforeCall(destinationId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteDestinationValidateBeforeCall(destinationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DeleteDestinationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -444,7 +444,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionByIdCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteSubscriptionByIdCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -472,10 +472,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -488,7 +488,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSubscriptionByIdValidateBeforeCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteSubscriptionByIdValidateBeforeCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'subscriptionId' is set
         if (subscriptionId == null) {
@@ -501,7 +501,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteSubscriptionByIdCall(subscriptionId, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionByIdCall(subscriptionId, notificationType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -528,7 +528,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<DeleteSubscriptionByIdResponse> deleteSubscriptionByIdWithHttpInfo(String subscriptionId, String notificationType) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, null, null);
+        okhttp3.Call call = deleteSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, null, null);
         Type localVarReturnType = new TypeToken<DeleteSubscriptionByIdResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -542,7 +542,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionByIdAsync(String subscriptionId, String notificationType, final ApiCallback<DeleteSubscriptionByIdResponse> callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionByIdAsync(String subscriptionId, String notificationType, final ApiCallback<DeleteSubscriptionByIdResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -563,7 +563,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DeleteSubscriptionByIdResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -576,7 +576,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDestinationCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getDestinationCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -603,10 +603,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -619,7 +619,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getDestinationValidateBeforeCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getDestinationValidateBeforeCall(String destinationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'destinationId' is set
         if (destinationId == null) {
@@ -627,7 +627,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getDestinationCall(destinationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getDestinationCall(destinationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -652,7 +652,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetDestinationResponse> getDestinationWithHttpInfo(String destinationId) throws ApiException {
-        com.squareup.okhttp.Call call = getDestinationValidateBeforeCall(destinationId, null, null);
+        okhttp3.Call call = getDestinationValidateBeforeCall(destinationId, null, null);
         Type localVarReturnType = new TypeToken<GetDestinationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -665,7 +665,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDestinationAsync(String destinationId, final ApiCallback<GetDestinationResponse> callback) throws ApiException {
+    public okhttp3.Call getDestinationAsync(String destinationId, final ApiCallback<GetDestinationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -686,7 +686,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getDestinationValidateBeforeCall(destinationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getDestinationValidateBeforeCall(destinationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetDestinationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -698,7 +698,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDestinationsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getDestinationsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -724,10 +724,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -740,10 +740,10 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getDestinationsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getDestinationsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getDestinationsCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getDestinationsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -766,7 +766,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetDestinationsResponse> getDestinationsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getDestinationsValidateBeforeCall(null, null);
+        okhttp3.Call call = getDestinationsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetDestinationsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -778,7 +778,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDestinationsAsync(final ApiCallback<GetDestinationsResponse> callback) throws ApiException {
+    public okhttp3.Call getDestinationsAsync(final ApiCallback<GetDestinationsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -799,7 +799,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getDestinationsValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getDestinationsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetDestinationsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -812,7 +812,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionCall(String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -839,10 +839,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -855,7 +855,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionValidateBeforeCall(String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notificationType' is set
         if (notificationType == null) {
@@ -863,7 +863,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSubscriptionCall(notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionCall(notificationType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -888,7 +888,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String notificationType) throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(notificationType, null, null);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(notificationType, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -901,7 +901,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionAsync(String notificationType, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(String notificationType, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -922,7 +922,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(notificationType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -936,7 +936,7 @@ public class NotificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionByIdCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionByIdCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -964,10 +964,10 @@ public class NotificationsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -980,7 +980,7 @@ public class NotificationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionByIdValidateBeforeCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionByIdValidateBeforeCall(String subscriptionId, String notificationType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'subscriptionId' is set
         if (subscriptionId == null) {
@@ -993,7 +993,7 @@ public class NotificationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSubscriptionByIdCall(subscriptionId, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionByIdCall(subscriptionId, notificationType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1020,7 +1020,7 @@ public class NotificationsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetSubscriptionByIdResponse> getSubscriptionByIdWithHttpInfo(String subscriptionId, String notificationType) throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, null, null);
+        okhttp3.Call call = getSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionByIdResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1034,7 +1034,7 @@ public class NotificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionByIdAsync(String subscriptionId, String notificationType, final ApiCallback<GetSubscriptionByIdResponse> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionByIdAsync(String subscriptionId, String notificationType, final ApiCallback<GetSubscriptionByIdResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1055,7 +1055,7 @@ public class NotificationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionByIdValidateBeforeCall(subscriptionId, notificationType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetSubscriptionByIdResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

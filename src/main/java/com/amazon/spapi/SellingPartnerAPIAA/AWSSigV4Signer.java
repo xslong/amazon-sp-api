@@ -3,10 +3,10 @@ package com.amazon.spapi.SellingPartnerAPIAA;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.*;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder;
-import com.squareup.okhttp.Request;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import okhttp3.Request;
 
 /**
  * AWS Signature Version 4 Signer

@@ -6,7 +6,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.STSAssumeRoleSessionCredentialsProvider;
-import com.squareup.okhttp.Request;
+import okhttp3.Request;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

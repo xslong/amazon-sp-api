@@ -60,7 +60,7 @@ public class ProductPricingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getCompetitivePricingCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCompetitivePricingCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -94,10 +94,10 @@ public class ProductPricingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -110,7 +110,7 @@ public class ProductPricingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCompetitivePricingValidateBeforeCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCompetitivePricingValidateBeforeCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -123,7 +123,7 @@ public class ProductPricingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getCompetitivePricingCall(marketplaceId, itemType, asins, skus, progressListener, progressRequestListener);
+        okhttp3.Call call = getCompetitivePricingCall(marketplaceId, itemType, asins, skus, progressListener, progressRequestListener);
         return call;
 
     }
@@ -154,7 +154,7 @@ public class ProductPricingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetPricingResponse> getCompetitivePricingWithHttpInfo(String marketplaceId, String itemType, List<String> asins, List<String> skus) throws ApiException {
-        com.squareup.okhttp.Call call = getCompetitivePricingValidateBeforeCall(marketplaceId, itemType, asins, skus, null, null);
+        okhttp3.Call call = getCompetitivePricingValidateBeforeCall(marketplaceId, itemType, asins, skus, null, null);
         Type localVarReturnType = new TypeToken<GetPricingResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -170,7 +170,7 @@ public class ProductPricingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCompetitivePricingAsync(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ApiCallback<GetPricingResponse> callback) throws ApiException {
+    public okhttp3.Call getCompetitivePricingAsync(String marketplaceId, String itemType, List<String> asins, List<String> skus, final ApiCallback<GetPricingResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -191,7 +191,7 @@ public class ProductPricingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCompetitivePricingValidateBeforeCall(marketplaceId, itemType, asins, skus, progressListener, progressRequestListener);
+        okhttp3.Call call = getCompetitivePricingValidateBeforeCall(marketplaceId, itemType, asins, skus, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetPricingResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -206,7 +206,7 @@ public class ProductPricingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getItemOffersCall(String marketplaceId, String itemCondition, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getItemOffersCall(String marketplaceId, String itemCondition, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -237,10 +237,10 @@ public class ProductPricingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -253,7 +253,7 @@ public class ProductPricingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getItemOffersValidateBeforeCall(String marketplaceId, String itemCondition, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getItemOffersValidateBeforeCall(String marketplaceId, String itemCondition, String asin, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -271,7 +271,7 @@ public class ProductPricingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getItemOffersCall(marketplaceId, itemCondition, asin, progressListener, progressRequestListener);
+        okhttp3.Call call = getItemOffersCall(marketplaceId, itemCondition, asin, progressListener, progressRequestListener);
         return call;
 
     }
@@ -300,7 +300,7 @@ public class ProductPricingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetOffersResponse> getItemOffersWithHttpInfo(String marketplaceId, String itemCondition, String asin) throws ApiException {
-        com.squareup.okhttp.Call call = getItemOffersValidateBeforeCall(marketplaceId, itemCondition, asin, null, null);
+        okhttp3.Call call = getItemOffersValidateBeforeCall(marketplaceId, itemCondition, asin, null, null);
         Type localVarReturnType = new TypeToken<GetOffersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -315,7 +315,7 @@ public class ProductPricingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getItemOffersAsync(String marketplaceId, String itemCondition, String asin, final ApiCallback<GetOffersResponse> callback) throws ApiException {
+    public okhttp3.Call getItemOffersAsync(String marketplaceId, String itemCondition, String asin, final ApiCallback<GetOffersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -336,7 +336,7 @@ public class ProductPricingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getItemOffersValidateBeforeCall(marketplaceId, itemCondition, asin, progressListener, progressRequestListener);
+        okhttp3.Call call = getItemOffersValidateBeforeCall(marketplaceId, itemCondition, asin, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetOffersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -351,7 +351,7 @@ public class ProductPricingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getListingOffersCall(String marketplaceId, String itemCondition, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getListingOffersCall(String marketplaceId, String itemCondition, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -382,10 +382,10 @@ public class ProductPricingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -398,7 +398,7 @@ public class ProductPricingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getListingOffersValidateBeforeCall(String marketplaceId, String itemCondition, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getListingOffersValidateBeforeCall(String marketplaceId, String itemCondition, String sellerSKU, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -416,7 +416,7 @@ public class ProductPricingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getListingOffersCall(marketplaceId, itemCondition, sellerSKU, progressListener, progressRequestListener);
+        okhttp3.Call call = getListingOffersCall(marketplaceId, itemCondition, sellerSKU, progressListener, progressRequestListener);
         return call;
 
     }
@@ -445,7 +445,7 @@ public class ProductPricingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetOffersResponse> getListingOffersWithHttpInfo(String marketplaceId, String itemCondition, String sellerSKU) throws ApiException {
-        com.squareup.okhttp.Call call = getListingOffersValidateBeforeCall(marketplaceId, itemCondition, sellerSKU, null, null);
+        okhttp3.Call call = getListingOffersValidateBeforeCall(marketplaceId, itemCondition, sellerSKU, null, null);
         Type localVarReturnType = new TypeToken<GetOffersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -460,7 +460,7 @@ public class ProductPricingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getListingOffersAsync(String marketplaceId, String itemCondition, String sellerSKU, final ApiCallback<GetOffersResponse> callback) throws ApiException {
+    public okhttp3.Call getListingOffersAsync(String marketplaceId, String itemCondition, String sellerSKU, final ApiCallback<GetOffersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -481,7 +481,7 @@ public class ProductPricingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getListingOffersValidateBeforeCall(marketplaceId, itemCondition, sellerSKU, progressListener, progressRequestListener);
+        okhttp3.Call call = getListingOffersValidateBeforeCall(marketplaceId, itemCondition, sellerSKU, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetOffersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -498,7 +498,7 @@ public class ProductPricingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPricingCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPricingCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -534,10 +534,10 @@ public class ProductPricingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -550,7 +550,7 @@ public class ProductPricingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPricingValidateBeforeCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPricingValidateBeforeCall(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceId' is set
         if (marketplaceId == null) {
@@ -563,7 +563,7 @@ public class ProductPricingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getPricingCall(marketplaceId, itemType, asins, skus, itemCondition, progressListener, progressRequestListener);
+        okhttp3.Call call = getPricingCall(marketplaceId, itemType, asins, skus, itemCondition, progressListener, progressRequestListener);
         return call;
 
     }
@@ -596,7 +596,7 @@ public class ProductPricingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetPricingResponse> getPricingWithHttpInfo(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition) throws ApiException {
-        com.squareup.okhttp.Call call = getPricingValidateBeforeCall(marketplaceId, itemType, asins, skus, itemCondition, null, null);
+        okhttp3.Call call = getPricingValidateBeforeCall(marketplaceId, itemType, asins, skus, itemCondition, null, null);
         Type localVarReturnType = new TypeToken<GetPricingResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -613,7 +613,7 @@ public class ProductPricingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPricingAsync(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ApiCallback<GetPricingResponse> callback) throws ApiException {
+    public okhttp3.Call getPricingAsync(String marketplaceId, String itemType, List<String> asins, List<String> skus, String itemCondition, final ApiCallback<GetPricingResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -634,7 +634,7 @@ public class ProductPricingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPricingValidateBeforeCall(marketplaceId, itemType, asins, skus, itemCondition, progressListener, progressRequestListener);
+        okhttp3.Call call = getPricingValidateBeforeCall(marketplaceId, itemType, asins, skus, itemCondition, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetPricingResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

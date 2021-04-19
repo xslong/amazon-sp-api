@@ -8,7 +8,7 @@ Obtains and signs a request with an access token from LWA (Login with Amazon) fo
 
 *Example*
 ```
-com.squareup.okhttp.Request request = new Request.Builder()
+okhttp3.Request request = new Request.Builder()
     .url(...)
     ...
     .build();
@@ -34,7 +34,7 @@ LWAAuthorizationCredentials lwaAuthorizationCredentials = LWAAuthorizationCreden
     .endpoint("...")
     .build();
 
-com.squareup.okhttp.Request signedRequest = new LWAAuthorizationSigner(lwaAuthorizationCredentials)
+okhttp3.Request signedRequest = new LWAAuthorizationSigner(lwaAuthorizationCredentials)
     .sign(request);
 ```
 
@@ -44,7 +44,7 @@ using the provided AWS developer account credentials.
 
 *Example*
 ```
-com.squareup.okhttp.Request request = new Request.Builder()
+okhttp3.Request request = new Request.Builder()
     .url(...)
     ...
     .build();
@@ -55,7 +55,7 @@ AWSAuthenticationCredentials awsAuthenticationCredentials = AWSAuthenticationCre
                 .region("...")
                 .build();
 
-com.squareup.okhttp.Request signedRequest = new AWSSigV4Signer(awsAuthenticationCredentials)
+okhttp3.Request signedRequest = new AWSSigV4Signer(awsAuthenticationCredentials)
     .sign(request);
 
 /*Signs request using IAM role credentials.
@@ -65,7 +65,7 @@ AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider = AWSA
                .roleSessionName("...")
                .build();
                
-com.squareup.okhttp.Request signedRequest = new 
+okhttp3.Request signedRequest = new 
      AWSSigV4Signer(awsAuthenticationCredentialsProvider.getCredentials())
     .sign(request);
 

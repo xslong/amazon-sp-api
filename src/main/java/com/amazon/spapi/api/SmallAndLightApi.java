@@ -61,7 +61,7 @@ public class SmallAndLightApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -90,10 +90,10 @@ public class SmallAndLightApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -106,7 +106,7 @@ public class SmallAndLightApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sellerSKU' is set
         if (sellerSKU == null) {
@@ -119,7 +119,7 @@ public class SmallAndLightApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -144,7 +144,7 @@ public class SmallAndLightApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo(String sellerSKU, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
+        okhttp3.Call call = deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
         return apiClient.execute(call);
     }
 
@@ -157,7 +157,7 @@ public class SmallAndLightApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -178,7 +178,7 @@ public class SmallAndLightApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -191,7 +191,7 @@ public class SmallAndLightApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightEligibilityBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSmallAndLightEligibilityBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -220,10 +220,10 @@ public class SmallAndLightApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -236,7 +236,7 @@ public class SmallAndLightApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sellerSKU' is set
         if (sellerSKU == null) {
@@ -249,7 +249,7 @@ public class SmallAndLightApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSmallAndLightEligibilityBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightEligibilityBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -276,7 +276,7 @@ public class SmallAndLightApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<SmallAndLightEligibility> getSmallAndLightEligibilityBySellerSKUWithHttpInfo(String sellerSKU, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
+        okhttp3.Call call = getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<SmallAndLightEligibility>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -290,7 +290,7 @@ public class SmallAndLightApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightEligibilityBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEligibility> callback) throws ApiException {
+    public okhttp3.Call getSmallAndLightEligibilityBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEligibility> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -311,7 +311,7 @@ public class SmallAndLightApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightEligibilityBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmallAndLightEligibility>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -325,7 +325,7 @@ public class SmallAndLightApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -354,10 +354,10 @@ public class SmallAndLightApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -370,7 +370,7 @@ public class SmallAndLightApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sellerSKU' is set
         if (sellerSKU == null) {
@@ -383,7 +383,7 @@ public class SmallAndLightApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -410,7 +410,7 @@ public class SmallAndLightApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<SmallAndLightEnrollment> getSmallAndLightEnrollmentBySellerSKUWithHttpInfo(String sellerSKU, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
+        okhttp3.Call call = getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<SmallAndLightEnrollment>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -424,7 +424,7 @@ public class SmallAndLightApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEnrollment> callback) throws ApiException {
+    public okhttp3.Call getSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEnrollment> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -445,7 +445,7 @@ public class SmallAndLightApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmallAndLightEnrollment>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -458,7 +458,7 @@ public class SmallAndLightApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightFeePreviewCall(SmallAndLightFeePreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSmallAndLightFeePreviewCall(SmallAndLightFeePreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -484,10 +484,10 @@ public class SmallAndLightApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -500,7 +500,7 @@ public class SmallAndLightApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSmallAndLightFeePreviewValidateBeforeCall(SmallAndLightFeePreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSmallAndLightFeePreviewValidateBeforeCall(SmallAndLightFeePreviewRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -508,7 +508,7 @@ public class SmallAndLightApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSmallAndLightFeePreviewCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightFeePreviewCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -533,7 +533,7 @@ public class SmallAndLightApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<SmallAndLightFeePreviews> getSmallAndLightFeePreviewWithHttpInfo(SmallAndLightFeePreviewRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = getSmallAndLightFeePreviewValidateBeforeCall(body, null, null);
+        okhttp3.Call call = getSmallAndLightFeePreviewValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<SmallAndLightFeePreviews>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -546,7 +546,7 @@ public class SmallAndLightApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSmallAndLightFeePreviewAsync(SmallAndLightFeePreviewRequest body, final ApiCallback<SmallAndLightFeePreviews> callback) throws ApiException {
+    public okhttp3.Call getSmallAndLightFeePreviewAsync(SmallAndLightFeePreviewRequest body, final ApiCallback<SmallAndLightFeePreviews> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -567,7 +567,7 @@ public class SmallAndLightApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSmallAndLightFeePreviewValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = getSmallAndLightFeePreviewValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmallAndLightFeePreviews>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -581,7 +581,7 @@ public class SmallAndLightApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call putSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call putSmallAndLightEnrollmentBySellerSKUCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -610,10 +610,10 @@ public class SmallAndLightApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -626,7 +626,7 @@ public class SmallAndLightApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(String sellerSKU, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sellerSKU' is set
         if (sellerSKU == null) {
@@ -639,7 +639,7 @@ public class SmallAndLightApi {
         }
         
 
-        com.squareup.okhttp.Call call = putSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = putSmallAndLightEnrollmentBySellerSKUCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -666,7 +666,7 @@ public class SmallAndLightApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<SmallAndLightEnrollment> putSmallAndLightEnrollmentBySellerSKUWithHttpInfo(String sellerSKU, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
+        okhttp3.Call call = putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<SmallAndLightEnrollment>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -680,7 +680,7 @@ public class SmallAndLightApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call putSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEnrollment> callback) throws ApiException {
+    public okhttp3.Call putSmallAndLightEnrollmentBySellerSKUAsync(String sellerSKU, List<String> marketplaceIds, final ApiCallback<SmallAndLightEnrollment> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -701,7 +701,7 @@ public class SmallAndLightApi {
             };
         }
 
-        com.squareup.okhttp.Call call = putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = putSmallAndLightEnrollmentBySellerSKUValidateBeforeCall(sellerSKU, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmallAndLightEnrollment>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

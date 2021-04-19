@@ -78,7 +78,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call confirmCustomizationDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call confirmCustomizationDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -107,10 +107,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -123,7 +123,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call confirmCustomizationDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call confirmCustomizationDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -141,7 +141,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = confirmCustomizationDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = confirmCustomizationDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -170,7 +170,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateConfirmCustomizationDetailsResponse> confirmCustomizationDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = confirmCustomizationDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = confirmCustomizationDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmCustomizationDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -185,7 +185,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call confirmCustomizationDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ApiCallback<CreateConfirmCustomizationDetailsResponse> callback) throws ApiException {
+    public okhttp3.Call confirmCustomizationDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmCustomizationDetailsRequest body, final ApiCallback<CreateConfirmCustomizationDetailsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -206,7 +206,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = confirmCustomizationDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = confirmCustomizationDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateConfirmCustomizationDetailsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -221,7 +221,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createAmazonMotorsCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createAmazonMotorsCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -250,10 +250,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -266,7 +266,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAmazonMotorsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createAmazonMotorsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -284,7 +284,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createAmazonMotorsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createAmazonMotorsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -313,7 +313,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateAmazonMotorsResponse> createAmazonMotorsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createAmazonMotorsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createAmazonMotorsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateAmazonMotorsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -328,7 +328,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAmazonMotorsAsync(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ApiCallback<CreateAmazonMotorsResponse> callback) throws ApiException {
+    public okhttp3.Call createAmazonMotorsAsync(String amazonOrderId, List<String> marketplaceIds, CreateAmazonMotorsRequest body, final ApiCallback<CreateAmazonMotorsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -349,7 +349,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createAmazonMotorsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createAmazonMotorsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateAmazonMotorsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -364,7 +364,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createConfirmDeliveryDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createConfirmDeliveryDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -393,10 +393,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -409,7 +409,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmDeliveryDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createConfirmDeliveryDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -427,7 +427,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createConfirmDeliveryDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmDeliveryDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -456,7 +456,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateConfirmDeliveryDetailsResponse> createConfirmDeliveryDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createConfirmDeliveryDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createConfirmDeliveryDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmDeliveryDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -471,7 +471,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createConfirmDeliveryDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ApiCallback<CreateConfirmDeliveryDetailsResponse> callback) throws ApiException {
+    public okhttp3.Call createConfirmDeliveryDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmDeliveryDetailsRequest body, final ApiCallback<CreateConfirmDeliveryDetailsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -492,7 +492,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createConfirmDeliveryDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmDeliveryDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateConfirmDeliveryDetailsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -507,7 +507,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createConfirmOrderDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createConfirmOrderDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -536,10 +536,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -552,7 +552,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmOrderDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createConfirmOrderDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -570,7 +570,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createConfirmOrderDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmOrderDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -599,7 +599,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateConfirmOrderDetailsResponse> createConfirmOrderDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createConfirmOrderDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createConfirmOrderDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmOrderDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -614,7 +614,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createConfirmOrderDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ApiCallback<CreateConfirmOrderDetailsResponse> callback) throws ApiException {
+    public okhttp3.Call createConfirmOrderDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmOrderDetailsRequest body, final ApiCallback<CreateConfirmOrderDetailsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -635,7 +635,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createConfirmOrderDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmOrderDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateConfirmOrderDetailsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -650,7 +650,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createConfirmServiceDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createConfirmServiceDetailsCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -679,10 +679,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -695,7 +695,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createConfirmServiceDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createConfirmServiceDetailsValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -713,7 +713,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createConfirmServiceDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmServiceDetailsCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -742,7 +742,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateConfirmServiceDetailsResponse> createConfirmServiceDetailsWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createConfirmServiceDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createConfirmServiceDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateConfirmServiceDetailsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -757,7 +757,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createConfirmServiceDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ApiCallback<CreateConfirmServiceDetailsResponse> callback) throws ApiException {
+    public okhttp3.Call createConfirmServiceDetailsAsync(String amazonOrderId, List<String> marketplaceIds, CreateConfirmServiceDetailsRequest body, final ApiCallback<CreateConfirmServiceDetailsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -778,7 +778,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createConfirmServiceDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createConfirmServiceDetailsValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateConfirmServiceDetailsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -793,7 +793,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createDigitalAccessKeyCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createDigitalAccessKeyCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -822,10 +822,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -838,7 +838,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createDigitalAccessKeyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createDigitalAccessKeyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -856,7 +856,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createDigitalAccessKeyCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createDigitalAccessKeyCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -885,7 +885,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateDigitalAccessKeyResponse> createDigitalAccessKeyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createDigitalAccessKeyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createDigitalAccessKeyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateDigitalAccessKeyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -900,7 +900,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createDigitalAccessKeyAsync(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ApiCallback<CreateDigitalAccessKeyResponse> callback) throws ApiException {
+    public okhttp3.Call createDigitalAccessKeyAsync(String amazonOrderId, List<String> marketplaceIds, CreateDigitalAccessKeyRequest body, final ApiCallback<CreateDigitalAccessKeyResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -921,7 +921,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createDigitalAccessKeyValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createDigitalAccessKeyValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateDigitalAccessKeyResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -936,7 +936,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createLegalDisclosureCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createLegalDisclosureCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -965,10 +965,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -981,7 +981,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createLegalDisclosureValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createLegalDisclosureValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -999,7 +999,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createLegalDisclosureCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createLegalDisclosureCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1028,7 +1028,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateLegalDisclosureResponse> createLegalDisclosureWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createLegalDisclosureValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createLegalDisclosureValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateLegalDisclosureResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1043,7 +1043,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createLegalDisclosureAsync(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ApiCallback<CreateLegalDisclosureResponse> callback) throws ApiException {
+    public okhttp3.Call createLegalDisclosureAsync(String amazonOrderId, List<String> marketplaceIds, CreateLegalDisclosureRequest body, final ApiCallback<CreateLegalDisclosureResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1064,7 +1064,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createLegalDisclosureValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createLegalDisclosureValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateLegalDisclosureResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1078,7 +1078,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createNegativeFeedbackRemovalCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createNegativeFeedbackRemovalCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1107,10 +1107,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -1123,7 +1123,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createNegativeFeedbackRemovalValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createNegativeFeedbackRemovalValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1136,7 +1136,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createNegativeFeedbackRemovalCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = createNegativeFeedbackRemovalCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1163,7 +1163,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateNegativeFeedbackRemovalResponse> createNegativeFeedbackRemovalWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = createNegativeFeedbackRemovalValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
+        okhttp3.Call call = createNegativeFeedbackRemovalValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<CreateNegativeFeedbackRemovalResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1177,7 +1177,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createNegativeFeedbackRemovalAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<CreateNegativeFeedbackRemovalResponse> callback) throws ApiException {
+    public okhttp3.Call createNegativeFeedbackRemovalAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<CreateNegativeFeedbackRemovalResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1198,7 +1198,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createNegativeFeedbackRemovalValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = createNegativeFeedbackRemovalValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateNegativeFeedbackRemovalResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1213,7 +1213,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createUnexpectedProblemCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createUnexpectedProblemCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1242,10 +1242,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -1258,7 +1258,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createUnexpectedProblemValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createUnexpectedProblemValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1276,7 +1276,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createUnexpectedProblemCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createUnexpectedProblemCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1305,7 +1305,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateUnexpectedProblemResponse> createUnexpectedProblemWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createUnexpectedProblemValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createUnexpectedProblemValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateUnexpectedProblemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1320,7 +1320,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createUnexpectedProblemAsync(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ApiCallback<CreateUnexpectedProblemResponse> callback) throws ApiException {
+    public okhttp3.Call createUnexpectedProblemAsync(String amazonOrderId, List<String> marketplaceIds, CreateUnexpectedProblemRequest body, final ApiCallback<CreateUnexpectedProblemResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1341,7 +1341,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createUnexpectedProblemValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createUnexpectedProblemValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateUnexpectedProblemResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1356,7 +1356,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createWarrantyCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createWarrantyCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1385,10 +1385,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -1401,7 +1401,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createWarrantyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createWarrantyValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1419,7 +1419,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = createWarrantyCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createWarrantyCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1448,7 +1448,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateWarrantyResponse> createWarrantyWithHttpInfo(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createWarrantyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
+        okhttp3.Call call = createWarrantyValidateBeforeCall(amazonOrderId, marketplaceIds, body, null, null);
         Type localVarReturnType = new TypeToken<CreateWarrantyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1463,7 +1463,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createWarrantyAsync(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ApiCallback<CreateWarrantyResponse> callback) throws ApiException {
+    public okhttp3.Call createWarrantyAsync(String amazonOrderId, List<String> marketplaceIds, CreateWarrantyRequest body, final ApiCallback<CreateWarrantyResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1484,7 +1484,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createWarrantyValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
+        okhttp3.Call call = createWarrantyValidateBeforeCall(amazonOrderId, marketplaceIds, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateWarrantyResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1498,7 +1498,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAttributesCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAttributesCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1527,10 +1527,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -1543,7 +1543,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAttributesValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAttributesValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1556,7 +1556,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getAttributesCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getAttributesCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1583,7 +1583,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetAttributesResponse> getAttributesWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = getAttributesValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
+        okhttp3.Call call = getAttributesValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<GetAttributesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1597,7 +1597,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAttributesAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetAttributesResponse> callback) throws ApiException {
+    public okhttp3.Call getAttributesAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetAttributesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1618,7 +1618,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAttributesValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getAttributesValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetAttributesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1632,7 +1632,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getMessagingActionsForOrderCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getMessagingActionsForOrderCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1661,10 +1661,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -1677,7 +1677,7 @@ public class MessagingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMessagingActionsForOrderValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getMessagingActionsForOrderValidateBeforeCall(String amazonOrderId, List<String> marketplaceIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'amazonOrderId' is set
         if (amazonOrderId == null) {
@@ -1690,7 +1690,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getMessagingActionsForOrderCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getMessagingActionsForOrderCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1717,7 +1717,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetMessagingActionsForOrderResponse> getMessagingActionsForOrderWithHttpInfo(String amazonOrderId, List<String> marketplaceIds) throws ApiException {
-        com.squareup.okhttp.Call call = getMessagingActionsForOrderValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
+        okhttp3.Call call = getMessagingActionsForOrderValidateBeforeCall(amazonOrderId, marketplaceIds, null, null);
         Type localVarReturnType = new TypeToken<GetMessagingActionsForOrderResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1731,7 +1731,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMessagingActionsForOrderAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetMessagingActionsForOrderResponse> callback) throws ApiException {
+    public okhttp3.Call getMessagingActionsForOrderAsync(String amazonOrderId, List<String> marketplaceIds, final ApiCallback<GetMessagingActionsForOrderResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1752,7 +1752,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getMessagingActionsForOrderValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getMessagingActionsForOrderValidateBeforeCall(amazonOrderId, marketplaceIds, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetMessagingActionsForOrderResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
